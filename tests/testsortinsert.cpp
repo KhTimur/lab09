@@ -24,5 +24,4 @@ SCENARIO("SORT_INSER"){
 
     }
     REQUIRE(j==3628800);
-    return 0;
 }
