@@ -1,14 +1,28 @@
-#include "catch.hpp"
+#include "catch.h"
+#include <algorithm>
 #include <merge_sort.h>
 
-SCENARIO("SORT_MERGE") {	
-	int nums3[] = { 9,1,7,2,5,8,3,6,4 };
-	int nums_proverka3[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	merge_sort(nums3, nums3+9);
-	int j=0;
-	for (int i = 0; i < 9; ++i) {
-		if(nums3[i] == nums_proverka3[i])
-			j++;
+
+SCENARIO("SORT"){
+    int nums[] = { 1,2,3,4,5,6,7,8,9,10 };
+    int numscheck[] = { 1,2,3,4,5,6,7,8,9,10 };
+    int *begi = std::begin(nums);
+    int *en = end(nums);
+    long int j=0;
+    for(long int i=0;i<3628800;i++)
+    {
+        std::next_permutation(begi,en);
+        merge_sort(begi, en);
+        int k=1;
+        for (int o = 0; o <= 10; ++o) {
+		if(nums[o] != numscheck[o])
+        {
+         k=0;
+        }
+        j=j+k;
 	}
-	REQUIRE(j==9);
+
+    }
+    REQUIRE(j==3628800);
+    return 0;
 }
