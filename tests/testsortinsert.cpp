@@ -1,13 +1,28 @@
-#include "catch.hpp"
+#include "catch.h"
+#include <algorithm>
 #include <inser.h>
 
 
-
-SCENARIO("SORT_INSERT") {
-	int nums1[] = { 9,1,7,2,5,8,3,6,4 };
-	int nums_proverka1[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	inser(nums1, nums1+9);
-	for (int i = 0; i < 9; ++i) {
-		REQUIRE(nums1[i] == nums_proverka1[i]);
+SCENARIO("SORT"){
+    int nums[] = { 1,2,3,4,5,6,7,8,9,10 };
+    int numscheck[] = { 1,2,3,4,5,6,7,8,9,10 };
+    int *begi = std::begin(nums);
+    int *en = std::end(nums);
+    long int j=0;
+    for(long int i=0;i<3628800;i++)
+    {
+        std::next_permutation(begi,en);
+        inser(begi, en);
+        int k=1;
+        for (int o = 0; o <= 10; ++o) {
+		if(nums[o] != numscheck[o])
+        {
+         k=0;
+        }
+        j=j+k;
 	}
+
+    }
+    REQUIRE(j==3628800);
+    return 0;
 }
