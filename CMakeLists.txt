@@ -55,4 +55,4 @@ if(BUILD_TESTS)
   add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes")
 
 endif()
-
+ 
