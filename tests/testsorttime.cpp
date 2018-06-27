@@ -18,7 +18,6 @@ SCENARIO("SORTTIME1"){
    	}
     auto end_time = chrono::high_resolution_clock::now();
     }
-    return 0;
 }
 
 SCENARIO("SORTTIME2"){
@@ -33,7 +32,6 @@ SCENARIO("SORTTIME2"){
    	}
     auto end_time = chrono::high_resolution_clock::now();
     }
-    return 0;
 }
 
 
@@ -49,7 +47,6 @@ SCENARIO("SORTTIME3"){
    	}
     auto end_time = chrono::high_resolution_clock::now();
     }
-    return 0;
 }
 
 
@@ -65,5 +62,4 @@ SCENARIO("SORTTIME4"){
    	}
     auto end_time = chrono::high_resolution_clock::now();
     }
-    return 0;
 }
