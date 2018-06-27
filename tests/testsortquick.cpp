@@ -14,7 +14,7 @@ SCENARIO("SORT_QUICK"){
         std::next_permutation(begi,en);
         quick_sort(begi, en);
         int k=1;
-        for (int o = 0; o <= 10; ++o) 
+        for (int o = 0; o < 10; ++o) 
 	{
 	   if(nums[o] != numscheck[o])
            k=0;
