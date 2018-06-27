@@ -1,6 +1,7 @@
 
 #include "catch.hpp"
 #include <algorithm>
+#include <chrono>
 #include <inser.h>
 #include <merge_sort.h>
 #include <quick_sort.h>
@@ -16,9 +17,9 @@ SCENARIO("SORTTIME1"){
         std::next_permutation(begi,en);
         inser(begi, en);
    	}
-    auto end_time = chrono::high_resolution_clock::now();
+    auto end_time = std::chrono::high_resolution_clock::now();
     }
-}
+
 
 SCENARIO("SORTTIME2"){
     int nums[] = { 1,2,3,4,5,6,7,8,9,10 };
@@ -30,9 +31,9 @@ SCENARIO("SORTTIME2"){
         std::next_permutation(begi,en);
         merge_sort(begi, en);
    	}
-    auto end_time = chrono::high_resolution_clock::now();
+    auto end_time = std::chrono::high_resolution_clock::now();
     }
-}
+
 
 
 SCENARIO("SORTTIME3"){
@@ -45,9 +46,9 @@ SCENARIO("SORTTIME3"){
         std::next_permutation(begi,en);
         heapSort(begi, en);
    	}
-    auto end_time = chrono::high_resolution_clock::now();
+    auto end_time = std::chrono::high_resolution_clock::now();
     }
-}
+
 
 
 SCENARIO("SORTTIME4"){
@@ -60,6 +61,5 @@ SCENARIO("SORTTIME4"){
         std::next_permutation(begi,en);
         quick_sort(begi, en);
    	}
-    auto end_time = chrono::high_resolution_clock::now();
+    auto end_time = std::chrono::high_resolution_clock::now();
     }
-}
