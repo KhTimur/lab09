@@ -1,5 +1,5 @@
 
-#include "catch.h"
+#include "catch.hpp"
 #include <algorithm>
 #include <inser.h>
 #include <merge_sort.h>
