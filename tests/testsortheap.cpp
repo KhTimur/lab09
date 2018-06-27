@@ -14,14 +14,12 @@ SCENARIO("SORT_HEAP"){
         std::next_permutation(begi,en);
         heapSort(begi, en);
         int k=1;
-        for (int o = 0; o <= 10; ++o) {
-		if(nums[o] != numscheck[o])
-        {
-         k=0;
-        }
-        j=j+k;
+        for (int o = 0; o <= 10; ++o) 
+	{ 
+	    if(nums[o] != numscheck[o])
+               k=0;
 	}
-
+      j=j+k;
     }
     REQUIRE(j==3628800);
 }
