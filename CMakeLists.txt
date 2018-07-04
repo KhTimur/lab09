@@ -30,6 +30,18 @@ add_library(${PROJECT_NAME} ${${PROJECT_NAME}_INSERT_SOURCES})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
 
+if(BUILD_EXAMPLES)
+  file(GLOB EXAMPLE_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/examples/*.cpp")
+  foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
+    get_filename_component(EXAMPLE_NAME ${EXAMPLE_SOURCE} NAME_WE)
+    add_executable(${EXAMPLE_NAME} ${EXAMPLE_SOURCE})
+    target_link_libraries(${EXAMPLE_NAME} print)
+    install(TARGETS ${EXAMPLE_NAME}
+      RUNTIME DESTINATION bin
+    )
+  endforeach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
+endif()
+
 install(TARGETS insert
     EXPORT insert-config
     ARCHIVE DESTINATION lib
